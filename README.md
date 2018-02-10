@@ -1,3 +1,11 @@
+#VISION - Image
+##An attempt to the Codalab [Vision Challenge](https://codalab.lri.fr/competitions/111)
+![Auto Vision challenge](./cifar10_logo.JPG)
+
+
+*Unmodified intro file*
+---
+
 This is the Vision project. Since the end of the 20th century, autonomous 
 vehicles  have  been  debated  within  the  scientific community. One of the issue raised are the behavior of the vehicule 
 which depend of the obstacle. In this challenge, we will study 
