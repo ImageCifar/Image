@@ -2,12 +2,13 @@
 
 ## Groupe Image
 **Membres du groupe**  
-  - Mariam Barhoumi <mariam.barhoumi@u-psud.fr>
-  - Leila-Yasmine Nedjar <leila.nedjar@u-psud.fr>
-  - Zakaria-Abderrahmen Difallah <zakaria-abderrahmen.difallah@u-psud.fr>
-  - Atte Torri <atte.torri@u-psud.fr>
-  - Matthieu Robeyns <matthieu.robeyns@u-psud.fr>
-  - _Jean-Marc Fares_ <jean-marc.fares@u-psud.fr>  
+
+  - Mariam Barhoumi <mariam.barhoumi@u-psud.fr>  
+  - Leila-Yasmine Nedjar <leila.nedjar@u-psud.fr>  
+  - Zakaria-Abderrahmen Difallah <zakaria-abderrahmen.difallah@u-psud.fr>  
+  - Atte Torri <atte.torri@u-psud.fr>  
+  - Matthieu Robeyns <matthieu.robeyns@u-psud.fr>  
+  - *Jean-Marc Fares* <jean-marc.fares@u-psud.fr>  
   
 [**Page du challenge Vision**](https://codalab.lri.fr/competitions/111)  
 [**GitHub repository**](https://github.com/ImageCifar/Image)  
