@@ -1,5 +1,5 @@
-#VISION - Image
-##An attempt to the Codalab [Vision Challenge](https://codalab.lri.fr/competitions/111)
+#VISION - Image  
+##An attempt to the Codalab [Vision Challenge](https://codalab.lri.fr/competitions/111)  
 ![Auto Vision challenge](./cifar10_logo.JPG)
 
 
