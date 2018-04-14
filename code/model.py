@@ -27,6 +27,8 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import GridSearchCV
 
+from preprocessing import Preprocessing as CustPp
+
 from time import time
 
 datapath = "../public_data/"
@@ -40,22 +42,14 @@ class model:
         self.num_train_samples=0
         self.num_feat=1
         self.num_labels=1
-        self.vts = [0.9, 0.95]
-        self.vt = self.vts[0]
+        self.vt = 0.87
         self.is_trained=False
-        self.mod = KNeighborsClassifier(100)
-        self.ppl = ppl.Pipeline([('scale', pp.StandardScaler()),
-                                 ('rm-variance', fs.VarianceThreshold()),
-                                 ('norm', pp.Normalizer()),
-                                 ('kbest', fs.SelectKBest().set_params(k = 100)),
-                                 ('ft-agglo', cls.FeatureAgglomeration(20)),
+        self.mod = RandomForestClassifier(n_estimators = 100)
+        '''
+        The HP of this predictor were found with the ./HyperParameter/model.py GS implementation
+        '''
+        self.ppl = ppl.Pipeline([('prepro', CustPp()),
                                  ('mod', self.mod)])
-        self.params = {'kbest__k' : [50, 100, 150],
-            'ft-agglo__n_clusters' : [5, 10, 30, 50],
-                'rm-variance__threshold' : [i*(1-i) for i in self.vts],
-                    'mod' : [KMeans(), GaussianNB(), MultinomialNB(), MLPClassifier(), KNeighborsClassifier()]}
-        print(self.ppl.get_params().keys())
-        self.gs = GridSearchCV(self.ppl, self.params)
     
     def fit(self, X, Y):
         '''
@@ -84,7 +78,7 @@ class model:
         if (self.num_train_samples != num_train_samples):
             print("ARRGH: number of samples in X and y do not match!")
         
-        self.gs.fit(X, y)
+        self.ppl.fit(X, y)
         self.is_trained=True
         print("Done fitting !")
     
@@ -108,7 +102,7 @@ class model:
         print("PREDICT: dim(y)= [{:d}, {:d}]".format(num_test_samples, self.num_labels))
         
         # Return predictions as class probabilities
-        y = self.gs.predict_proba(X)
+        y = self.ppl.predict_proba(X)
         return y
     
     def save(self, path="./"):
