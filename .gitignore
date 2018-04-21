@@ -3,3 +3,5 @@
 .ipy*
 
 public_data/*
+*.pyc
+*.zip
